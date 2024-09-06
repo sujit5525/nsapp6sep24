@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> Name Sorter App </title>
+<style>
+*{font-size: 40px;}
+body {background-color:lightyellow;}
+h1 { background-color:black; color:white; width:70%; border-radius:30px;}
+input [type = submit] {background- color:lightblue; color:black;}
+input [type = text] {background- color:lightblue; color:white;}
+
+</style>
+</head>
+<body>
+<center>
+<h1> Name Sorter </h1>
+<form onsubmit="sort()">
+<input type="text" id="string" placeholder="enter a string"/>
+<br/><br/>
+<input type = "submit" value= "sort"/>
+</form>
+<h2 id ="msg"/>
+<script>
+function sort()
+{
+event.preventDefault();
+let string = document.getElementById("string");
+let msg = document.getElementById("msg");
+
+if(string.value==="")
+{
+alert("please enter string");
+msg.innerHTML="";
+string.focus();
+return;
+}
+let name = string.value;
+let sname = name.split("").sort().join("");
+msg.innerHTML= sname;
+}
+</script>
+</center>
+</body>
+</html>
